@@ -11,17 +11,13 @@ section {
   border: 5px ridge black;
 }
 
-.col-12 {
-  border-bottom: 2px solid black
-}
-
 .border-right {
   border-right: 2px solid black;
 }
 
 .bs-sucks {
-  padding-right: 0!important;
-  padding-left: 0!important;
+  padding-right: 0px!important;
+  padding-left: 0px!important;
 }
 /* #temperature div {
 

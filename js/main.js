@@ -60,6 +60,7 @@ button.addEventListener("click", function (e) {
         weatherObject = weather;
 
         updatingWeatherInfo();
+        errorMessage.style.visibility = "hidden";
       })
       .catch(function (weatherError) {
         // handle error
@@ -72,7 +73,8 @@ button.addEventListener("click", function (e) {
   }
 });
 
-errorMessage.textContent = "Please enter a valid 5 digit zip code";
+errorMessage.textContent = "**Please enter a valid 5 digit zip code**";
+errorMessage.style.color = "red"
 //While WeatherObject = false, dont do anything;
 function updatingWeatherInfo() {
   city.textContent = locationObject.data.name;
