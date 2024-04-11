@@ -13,7 +13,8 @@ const city = document.getElementById("display-city");
 const condition = document.getElementById("current-condition");
 const info = document.getElementById("additional-info");
 const kelvin = document.getElementById("kelvin");
-const zipCode = document.getElementById("submittingZipcode")
+const zipCode = document.getElementById("submittingZipcode");
+const weatherIcon = document.querySelector("img");
 let   farhenheit = document.getElementById("farhenheit");
 let   celsius = document.getElementById("celsius");
 let   weatherObject;
@@ -84,6 +85,8 @@ function updatingWeatherInfo() {
   condition.textContent = weatherObject.data.weather[0].main;
   info.textContent = weatherObject.data.weather[0].description; 
   info.style.textTransform = "capitalize";
+  
+  weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${}d@2x.png`);
 };
 /*
 I want to create a 
