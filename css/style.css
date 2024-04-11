@@ -1,5 +1,5 @@
 body {
-  font-size: 2rem; /* at smaller port, use @media to change to a smaller size */
+  font-size: calc(16px + .5vw); 
   text-align: center;
 }
 
@@ -17,6 +17,11 @@ section {
 
 .border-right {
   border-right: 2px solid black;
+}
+
+.bs-sucks {
+  padding-right: 0!important;
+  padding-left: 0!important;
 }
 /* #temperature div {
 
