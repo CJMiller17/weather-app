@@ -16,7 +16,7 @@ axios
       latitude = response.data.lat
       longitude = response.data.lon
  
-      function latLon() {
+      function location() {
           axios
             .get(
               `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`
@@ -35,7 +35,7 @@ axios
             });
 
       }
-      latLon();
+      location();
   })
   .catch(function (error) {
     // handle error
@@ -45,7 +45,7 @@ axios
     // always executed
   });
 
-  https://api.openweathermap.org/data/2.5/weather?zip={zip code},{country code}&appid={API key}
+//https://api.openweathermap.org/data/2.5/weather?zip={zip code},{country code}&appid={API key}
 
 //this will be the weather API
 

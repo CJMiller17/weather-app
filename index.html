@@ -10,10 +10,41 @@
     <!-- project styles -->
     <link rel="stylesheet" href="./css/style.css">
   </head>
-  <body class="bg-primary">
-    <div id="app">
-      <h1>Hello!</h1>
-    </div>
+  <body class="bg-primary container">
+    
+    <header class="container bg-light mb-3"> Weather App
+        <form>
+          <label for="fname"></label>
+          <input type="text" id="fname" name="fname">
+        </form>
+        <button type="button" class="btn btn-info">Info</button>
+      <article class="">Error Message</article>
+    </header>
+    
+    <main class="container bg-success mb-4">
+      <section id="city" class="row bg-warning justify-content-center mb-4">
+        <div class="col-12">City</div>
+        <div class="col bg-light p-3">Lexington</div>
+      </section>  
+      <section id="temperature" class="row bg-warning mb-4">
+        <div class="col-12">Temperature</div>
+        <div class="col-4 bg-light border-right p-3">Kelvin</div>
+        <div class="col-4 bg-light border-right p-3">Farhenheit</div>
+        <div class="col-4 bg-light p-3">Celsius</div>
+      </section>  
+      <section id="condition" class="row bg-warning justify-content-center mb-4">
+        <div class="col-12">Condition</div>
+        <div class="col bg-light p-3">Icy</div>
+      </section>
+      <section id="info" class="row bg-light justify-content-center">
+        <div class="col-12 bg-warning">Other Info</div>
+        <div class="col bg-light p-3">I like spaghetti</div>
+      </section>
+    </main>
+    
+    <aside>
+
+    </aside>
 
     <!-- BootStrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

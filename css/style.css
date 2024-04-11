@@ -1,3 +1,25 @@
-h1 {
-  color: pink;
+body {
+  font-size: 2rem; /* at smaller port, use @media to change to a smaller size */
+  text-align: center;
 }
+
+input {
+  width: 80%;
+}
+
+section {
+  border: 5px ridge black;
+}
+
+.col-12 {
+  border-bottom: 2px solid black
+}
+
+.border-right {
+  border-right: 2px solid black;
+}
+/* #temperature div {
+
+
+} */
+
