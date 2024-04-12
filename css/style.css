@@ -19,8 +19,8 @@ section {
   padding-right: 0px!important;
   padding-left: 0px!important;
 }
-/* #temperature div {
 
-
-} */
+#info {
+background-image: linear-gradient(rgba(211,211,211,1), rgba(255, 255, 255, 0));
+}
 

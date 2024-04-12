@@ -27,11 +27,12 @@ let   locationObject;
 let   formatSunrise;
 let formatSunset;
 
+//setTimeout(axios, 500);
+
 //Event Listeners
 button.addEventListener("click", function (e) {
   e.preventDefault();
-  // console.log(experiment);
-
+ 
   //this will be the geolocation API
   axios
     .get(
@@ -69,7 +70,6 @@ button.addEventListener("click", function (e) {
 
         sunriseTime();
         sunsetTime();
-        setTimeout(updatingWeatherInfo, 50);
         updatingWeatherInfo();
         errorMessage.style.visibility = "hidden";
       })
@@ -96,8 +96,8 @@ function updatingWeatherInfo() {
   info.textContent = weatherObject.data.weather[0].description; 
   info.style.textTransform = "capitalize";
   let icon = weatherObject.data.weather[0].icon;
-  sunrise.textContent = "Sunrise: " + formatSunrise;
-  sunset.textContent = "Sunset: " + formatSunset;
+  sunrise.textContent = "Sunrise: " + formatSunrise + " am";
+  sunset.textContent = "Sunset: " + formatSunset + " pm";
   humidity.textContent = "Humiditity: " + weatherObject.data.main.humidity + "%";
   windSpeed.textContent = "Wind Speed: " + (weatherObject.data.wind.speed * 2.23694).toFixed(1) + "mph";
   windDirection.textContent = "Wind Direction: " + weatherObject.data.wind.deg + "\u00B0";
