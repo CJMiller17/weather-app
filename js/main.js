@@ -133,30 +133,14 @@ function sunsetTime() {
   console.log(formatSunset);
 }
 
-// function compassRose(windDirection.textContent) {
-//   switch 
-// }
+
 function compassRose() {
   degrees = weatherObject.data.wind.deg;
-
-  // Define array of directions
- directions = [
-    "north",
-    "northeast",
-    "east",
-    "southeast",
-    "south",
-    "southwest",
-    "west",
-    "northwest",
-  ];
-
+  directions = ["north", "northeast", "east", "southeast", "south", "southwest", "west", "northwest"];
   // Split into the 8 directions
   degrees = (degrees * 8) / 360;
-
   // round to nearest integer.
   degrees = Math.round(degrees, 0);
-
   // Ensure it's within 0-7
   degrees = (degrees + 8) % 8;
 
