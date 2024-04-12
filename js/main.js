@@ -15,10 +15,17 @@ const info = document.getElementById("additional-info");
 const kelvin = document.getElementById("kelvin");
 const zipCode = document.getElementById("submittingZipcode");
 const weatherIcon = document.querySelector("img");
+const sunrise = document.getElementById("sunrise");
+const sunset = document.getElementById("sunset");
+const humidity = document.getElementById("humidity");
+const windSpeed = document.getElementById("wind-speed");
+const windDirection = document.getElementById("wind-direction");  
 let   farhenheit = document.getElementById("farhenheit");
 let   celsius = document.getElementById("celsius");
 let   weatherObject;
 let   locationObject;
+let   formatSunrise;
+let formatSunset;
 
 //Event Listeners
 button.addEventListener("click", function (e) {
@@ -60,6 +67,9 @@ button.addEventListener("click", function (e) {
         console.log("Weather Response: ", weather);
         weatherObject = weather;
 
+        sunriseTime();
+        sunsetTime();
+        setTimeout(updatingWeatherInfo, 50);
         updatingWeatherInfo();
         errorMessage.style.visibility = "hidden";
       })
@@ -76,7 +86,7 @@ button.addEventListener("click", function (e) {
 
 errorMessage.textContent = "**Please enter a valid 5 digit zip code**";
 errorMessage.style.color = "red"
-//While WeatherObject = false, dont do anything;
+
 function updatingWeatherInfo() {
   city.textContent = locationObject.data.name;
   kelvin.textContent = weatherObject.data.main.temp.toFixed(1) + "\u00B0K";
@@ -85,12 +95,33 @@ function updatingWeatherInfo() {
   condition.textContent = weatherObject.data.weather[0].main;
   info.textContent = weatherObject.data.weather[0].description; 
   info.style.textTransform = "capitalize";
-  
-  weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${}d@2x.png`);
+  let icon = weatherObject.data.weather[0].icon;
+  sunrise.textContent = "Sunrise: " + formatSunrise;
+  sunset.textContent = "Sunset: " + formatSunset;
+  humidity.textContent = "Humiditity: " + weatherObject.data.main.humidity + "%";
+  windSpeed.textContent = "Wind Speed: " + (weatherObject.data.wind.speed * 2.23694).toFixed(1) + "mph";
+  windDirection.textContent = "Wind Direction: " + weatherObject.data.wind.deg + "\u00B0";
+  weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${icon}@2x.png`);
 };
 /*
 I want to create a 
 I want someone to be able to input a zipcode into the input field.
   I want that zipcode to be 5 digits long
     if not, I want it to return a specific error message
-*/
+*/function sunriseTime() {
+  let unixTimestamp = weatherObject.data.sys.sunrise;
+  let dateObj = new Date(unixTimestamp * 1000);
+  let riseTime = dateObj.toTimeString();
+  formatSunrise = riseTime.substring(0,5)
+  console.log("sunrise: ", riseTime);
+  console.log(formatSunrise);
+}
+
+function sunsetTime() {
+  let unixTimestamp = weatherObject.data.sys.sunset;
+  let dateObj = new Date(unixTimestamp * 1000);
+  let setTime = dateObj.toTimeString();
+  formatSunset = setTime.substring(0, 5);
+  console.log("sunset: ", setTime);
+  console.log(formatSunset);
+}
