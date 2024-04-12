@@ -18,7 +18,12 @@
           <label for="submittingZipcode"></label>
           <input type="number" id="submittingZipcode" name="fname" placeholder="Insert Zip Code">
         </form>
+        <div class="d-flex justify-content-center align-items-center">
         <button type="submit" form="zipcodeSubmit" class="btn btn-warning mt-2" id="button">Get Weather</button>
+        <div class="spinner-border text-secondary" id="spinner" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        </div>
       <article id="error">Error Message</article>
     </header>
     
@@ -44,7 +49,7 @@
           <div class="col-12 col-lg-4 d-flex justify-content-center bs-sucks">
             <section id="info" class="bg-light px-auto  mx-auto text-center gy-0 flex-grow-1">
               <div class="col-12 bg-warning">Other Info</div>
-              <img src="" alt="current weather icon">
+              <img src="" alt="current weather icon" id="information">
               <div class="col bg-light p-3" id="additional-info">...</div>
               <div class="col bg-light p-3" id="sunrise">...</div>
               <div class="col bg-light p-3" id="sunset">...</div>

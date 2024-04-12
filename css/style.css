@@ -11,6 +11,10 @@ section {
   border: 5px ridge black;
 }
 
+button {
+  
+}
+
 .border-right {
   border-right: 2px solid black;
 }
@@ -20,7 +24,15 @@ section {
   padding-left: 0px!important;
 }
 
-#info {
-background-image: linear-gradient(rgba(211,211,211,1), rgba(255, 255, 255, 0));
+#information {
+background-image: linear-gradient(rgba(128,128,128,1), rgba(211, 211, 211, 0));
 }
 
+#spinner {
+  margin-top: 6px;
+  margin-left: 7px;
+}
+
+#wind-direction {
+  text-transform: capitalize;
+}
