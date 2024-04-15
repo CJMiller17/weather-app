@@ -42,7 +42,7 @@ button.addEventListener("click", function (e) {
 //This is the Geolocation API. Called First.
   axios
     .get(
-      `http://api.openweathermap.org/geo/1.0/zip?zip=${zipCode.value},US&appid=${apiKey}`
+      `https://api.openweathermap.org/geo/1.0/zip?zip=${zipCode.value},US&appid=${apiKey}`
     )
     .then(function (geolocation) {
       //Handles success
